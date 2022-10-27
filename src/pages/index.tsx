@@ -38,27 +38,27 @@ export default function SignIn() {
         onSubmit={(handleSubmit(handleSignIn))}
       >
         <Stack spacing="4">
-          <Input 
+          <Input
             name="e-mail"
-            type="email" 
+            type="email"
             label="Email"
             error={errors.email}
-            {...register('email')} 
+            {...register('email')}
           />
 
-          <Input 
-            name="password" 
-            type="password" 
+          <Input
+            name="password"
+            type="password"
             label="Senha"
             error={errors.password}
-            {...register('password')} 
+            {...register('password')}
           />
 
         </Stack>
 
-        <Button 
-          type="submit" 
-          mt="6" 
+        <Button
+          type="submit"
+          mt="6"
           colorScheme="pink"
           isLoading={isSubmitting}
         >
