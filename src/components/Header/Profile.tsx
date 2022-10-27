@@ -5,21 +5,21 @@ interface ProfileProps {
 }
 
 export function Profile({ showProfileData = true }: ProfileProps) {
-    return (
-         <Flex align="center">
-          {showProfileData && (
-          <Box mr="4" textAlign="right">
-            <Text>Eleazar Nascimento</Text>
-            <Text color="gray.300" fontSize="small">
-              eleazar.nascimento@gmail.com
-            </Text>
-          </Box>
-          )}
-          <Avatar
-            size="md"
-            name="Elezar Nascimento"
-            src="https://github.com/eleazar-nascimento.png"
-          />
-        </Flex>
-    );
+  return (
+    <Flex align="center">
+      {showProfileData && (
+        <Box mr="4" textAlign="right">
+          <Text>Eleazar Nascimento</Text>
+          <Text color="gray.300" fontSize="small">
+            eleazar.nascimento@gmail.com
+          </Text>
+        </Box>
+      )}
+      <Avatar
+        size="md"
+        name="Elezar Nascimento"
+        src="https://github.com/eleazar-nascimento.png"
+      />
+    </Flex>
+  );
 }

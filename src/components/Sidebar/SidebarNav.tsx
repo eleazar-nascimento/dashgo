@@ -5,7 +5,7 @@ import { NavLink } from "./NavLink";
 import { NavSection } from "./NavSection";
 
 export function SidebarNav() {
-    return(
+    return (
         <Stack spacing="12" align="flex-start">
             <NavSection title="Geral">
                 <NavLink href="/dashboard" icon={RiDashboardLine}>
@@ -23,6 +23,6 @@ export function SidebarNav() {
                     Automação
                 </NavLink>
             </NavSection>
-        </Stack>    
+        </Stack>
     );
 }

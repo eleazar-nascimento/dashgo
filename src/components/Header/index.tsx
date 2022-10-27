@@ -11,7 +11,7 @@ export default function Header() {
   const { onOpen } = useSidebarDrawer();
 
   const isWideVersion = useBreakpointValue({
-    base: false, 
+    base: false,
     lg: true,
   });
 
@@ -46,11 +46,11 @@ export default function Header() {
       {isWideVersion && <SearchBox />}
 
       <Flex align="center" ml="auto">
-      
-      <NotificationsNav />
 
-      <Profile showProfileData={isWideVersion} />
-      
+        <NotificationsNav />
+
+        <Profile showProfileData={isWideVersion} />
+
       </Flex>
     </Flex>
   );

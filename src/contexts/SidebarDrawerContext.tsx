@@ -19,7 +19,7 @@ export function SidebarDrawerProvider({ children }: SidebarDrawerProviderProps) 
     }, [router.asPath])
 
     return (
-        <SidebarDrawerContext.Provider value={ disclosure }>
+        <SidebarDrawerContext.Provider value={disclosure}>
             {children}
         </SidebarDrawerContext.Provider>
     )
