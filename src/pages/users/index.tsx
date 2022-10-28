@@ -10,6 +10,7 @@ import Sidebar from "../../components/Sidebar";
 export default function UserList() {
 
   const { data, isLoading, error } = useQuery('users', async () => {
+
     const response = await fetch('http://localhost:3000/api/users')
     const data = await response.json()
 
@@ -27,6 +28,8 @@ export default function UserList() {
     });
 
     return users;
+  }, {
+    staleTime: 1000 * 5, // 5 seconds
   });
 
   const isWideVersion = useBreakpointValue({
@@ -87,7 +90,7 @@ export default function UserList() {
                         <Td>
                           <Box>
                             <Text fontWeight="bold" >{user.name}</Text>
-                            <Text fontSize="sm" color="gray.300">user.email</Text>
+                            <Text fontSize="sm" color="gray.300">{user.email}</Text>
                           </Box>
                         </Td>
                         {isWideVersion && <Td>{user.createdAt}</Td>}
