@@ -7,23 +7,24 @@ import { theme } from "../styles/theme";
 
 import { SidebarDrawerProvider } from "../contexts/SidebarDrawerContext";
 import { makeServer } from "../services/mirage";
+import { queryClient } from "../services/queryClient";
+import { AuthProvider } from "../services/contexts/AuthContext";
 
-if (process.env.NODE_ENV === 'development') {
-  makeServer();
-}
-makeServer();
-
-const queryclient = new QueryClient();
+// if (process.env.NODE_ENV === 'development') {
+//   makeServer();
+// }
+// makeServer();
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <QueryClientProvider client={queryclient}>
-      <ChakraProvider theme={theme}>
-        <SidebarDrawerProvider>
-          <Component {...pageProps} />
-        </SidebarDrawerProvider>
-      </ChakraProvider>
-
+    <QueryClientProvider client={queryClient}>
+      <AuthProvider>
+        <ChakraProvider theme={theme}>
+          <SidebarDrawerProvider>
+            <Component {...pageProps} />
+          </SidebarDrawerProvider>
+        </ChakraProvider>
+      </AuthProvider>
       <ReactQueryDevtools />
     </QueryClientProvider>
   );
